@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Resi-Me</string>
+    <string name="saved_recipes">saved recipes</string>
+    <string name="home">home</string>
+    <string name="meal_plan">meal plan</string>
+
+    <!-- home page -->
+    <string name="top_recipes">top recipes</string>
+    <string name="popular_recipes">popular recipes</string>
+</resources>
