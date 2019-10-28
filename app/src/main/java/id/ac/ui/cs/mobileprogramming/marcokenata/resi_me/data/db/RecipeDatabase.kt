@@ -1,6 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.db
 
 import androidx.room.Database
+import androidx.room.RoomDatabase
 
 
 @Database(
@@ -8,6 +9,6 @@ import androidx.room.Database
     version = 2,
     exportSchema = false
 )
-abstract class RecipeDatabase {
+abstract class RecipeDatabase : RoomDatabase() {
     abstract fun recipeDao() : RecipeDao
 }
