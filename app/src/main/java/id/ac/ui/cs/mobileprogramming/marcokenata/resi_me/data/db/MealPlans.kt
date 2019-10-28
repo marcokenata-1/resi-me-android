@@ -7,7 +7,7 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.M
 @Entity(tableName = "meal_plans")
 data class MealPlans(
     val mealPlanName: String,
-    val meals: ArrayList<Meals>
+    val meals: ArrayList<Int>
 ){
     @PrimaryKey(autoGenerate = true)
     var id : Int = 0

@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network
 
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Categories
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.CategoryParent
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.DataResponse
 import retrofit2.Call
@@ -16,5 +17,8 @@ interface MealDBService {
 
     @GET("filter.php?")
     fun getMealByCategory(@Query("c") mealCategory : String) : Call<CategoryParent>
+
+    @GET("categories.php")
+    fun getCategories() : Call<Categories>
 
 }
