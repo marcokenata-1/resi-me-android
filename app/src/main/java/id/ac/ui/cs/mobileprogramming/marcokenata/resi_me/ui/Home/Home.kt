@@ -11,10 +11,6 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
 
 class Home : Fragment() {
 
-    companion object {
-        fun newInstance() = Home()
-    }
-
     private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(

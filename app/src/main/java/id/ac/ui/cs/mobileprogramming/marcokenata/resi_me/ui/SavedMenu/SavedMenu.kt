@@ -11,10 +11,6 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
 
 class SavedMenu : Fragment() {
 
-    companion object {
-        fun newInstance() = SavedMenu()
-    }
-
     private lateinit var viewModel: SavedMenuViewModel
 
     override fun onCreateView(
