@@ -48,7 +48,7 @@ class RecipeRepository @Inject constructor(
     @Provides
     suspend fun insertSavedRecipesRepo(savedRecipes: SavedRecipes) {
         return withContext(Dispatchers.IO){
-            recipeDBDataSource.insertSavedRecipes(savedRecipes)
+            recipeDBDataSource.insertSavedRecipe(savedRecipes)
         }
     }
 
@@ -62,7 +62,7 @@ class RecipeRepository @Inject constructor(
     @Provides
     suspend fun fetchSavedRecipeById(id: Int) : LiveData<SavedRecipes> {
         return withContext(Dispatchers.IO){
-            recipeDBDataSource.displaySavedRecipes(id)
+            recipeDBDataSource.displaySavedRecipe(id)
             return@withContext recipeDBDataSource.displaySavedRecipes
         }
     }
@@ -72,6 +72,22 @@ class RecipeRepository @Inject constructor(
         return withContext(Dispatchers.IO){
             recipeDataSource.getCategories()
             return@withContext recipeDataSource.categories
+        }
+    }
+
+    @Provides
+    suspend fun fetchSavedRecipesList() : LiveData<List<SavedRecipes>> {
+        return withContext(Dispatchers.IO){
+            recipeDBDataSource.displaySavedRecipesList()
+            return@withContext recipeDBDataSource.displaySavedRecipesList
+        }
+    }
+
+    @Provides
+    suspend fun fetchMealPlanList() : LiveData<List<MealPlans>> {
+        return withContext(Dispatchers.IO){
+            recipeDBDataSource.displayMealPlanList()
+            return@withContext recipeDBDataSource.displayMealPlanList
         }
     }
 }

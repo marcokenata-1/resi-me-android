@@ -11,13 +11,23 @@ import javax.inject.Inject
 @Module
 class RecipeDBDataSource @Inject constructor(private val recipeDao: RecipeDao) {
 
-    private val _displaySavedRecipes = MutableLiveData<SavedRecipes>()
+    private val _displaySavedRecipe = MutableLiveData<SavedRecipes>()
 
     val displaySavedRecipes : LiveData<SavedRecipes>
-        get() = _displaySavedRecipes
+        get() = _displaySavedRecipe
+
+    private val _displaySavedRecipeList = MutableLiveData<List<SavedRecipes>>()
+
+    val displaySavedRecipesList : LiveData<List<SavedRecipes>>
+        get() = _displaySavedRecipeList
+
+    private val _displayMealPlanList = MutableLiveData<List<MealPlans>>()
+
+    val displayMealPlanList : LiveData<List<MealPlans>>
+        get() = _displayMealPlanList
 
     @Provides
-    suspend fun insertSavedRecipes(savedRecipes: SavedRecipes){
+    suspend fun insertSavedRecipe(savedRecipes: SavedRecipes){
         return withContext(Dispatchers.IO){
             recipeDao.insertSavedRecipes(savedRecipes)
         }
@@ -31,9 +41,23 @@ class RecipeDBDataSource @Inject constructor(private val recipeDao: RecipeDao) {
     }
 
     @Provides
-    suspend fun displaySavedRecipes(id: Int){
+    suspend fun displaySavedRecipe(id: Int){
         return withContext(Dispatchers.IO){
-            _displaySavedRecipes.postValue(recipeDao.displayRecipe(id))
+            _displaySavedRecipe.postValue(recipeDao.displayRecipe(id))
+        }
+    }
+
+    @Provides
+    suspend fun displaySavedRecipesList(){
+        return withContext(Dispatchers.IO){
+            _displaySavedRecipeList.postValue(recipeDao.displayRecipeList())
+        }
+    }
+
+    @Provides
+    suspend fun displayMealPlanList(){
+        return withContext(Dispatchers.IO){
+            _displayMealPlanList.postValue(recipeDao.displayMealPlanList())
         }
     }
 }

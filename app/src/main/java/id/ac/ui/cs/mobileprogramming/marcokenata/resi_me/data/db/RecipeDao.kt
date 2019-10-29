@@ -16,5 +16,9 @@ interface RecipeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMealPlan(mealPlans: MealPlans)
 
+    @Query("select * from saved_recipes")
+    fun displayRecipeList() : List<SavedRecipes>
 
+    @Query("select * from meal_plans")
+    fun displayMealPlanList() : List<MealPlans>
 }

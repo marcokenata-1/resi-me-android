@@ -8,7 +8,6 @@ import kotlin.coroutines.CoroutineContext
 class MealPlanViewModel(
     private val recipeRepository: RecipeRepository
 ) : ViewModel(), CoroutineScope {
-    // TODO: Implement the ViewModel
 
     override val coroutineContext: CoroutineContext
         get() = SupervisorJob() + Dispatchers.Main
@@ -17,6 +16,7 @@ class MealPlanViewModel(
         super.onCleared()
         coroutineContext.cancel()
     }
+
 
 }
 

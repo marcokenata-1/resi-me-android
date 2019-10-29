@@ -1,15 +1,19 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.SavedMenu
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import dagger.android.support.AndroidSupportInjection
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
+import javax.inject.Inject
 
 class SavedMenu : Fragment() {
+
+    @Inject
+    internal lateinit var viewModelFactory: SavedMenuViewModelFactory
 
     private lateinit var viewModel: SavedMenuViewModel
 
@@ -22,7 +26,8 @@ class SavedMenu : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SavedMenuViewModel::class.java)
+        AndroidSupportInjection.inject(this)
+        viewModel = ViewModelProviders.of(this,viewModelFactory).get(SavedMenuViewModel::class.java)
     }
 
 }

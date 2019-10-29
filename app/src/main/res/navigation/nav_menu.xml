@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_menu">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_menu"
+    app:startDestination="@+id/home_menu">
 
+    <fragment
+        android:id="@+id/home_menu"
+        android:name="id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.Home.Home"
+        android:label="home"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/meal_plan_menu"
+        android:name="id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.MealPlan.MealPlan"
+        android:label="meal plan"
+        tools:layout="@layout/meal_plan_fragment" />
+    <fragment
+        android:id="@+id/saved_recipes_menu"
+        android:name="id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.SavedMenu.SavedMenu"
+        android:label="saved recipes"
+        tools:layout="@layout/saved_menu_fragment" />
 </navigation>

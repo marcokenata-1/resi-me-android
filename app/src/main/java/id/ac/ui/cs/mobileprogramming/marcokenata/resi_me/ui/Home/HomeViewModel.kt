@@ -1,13 +1,13 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.Home
 
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.cancel
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.repository.RecipeRepository
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
-class HomeViewModel : ViewModel(), CoroutineScope {
+class HomeViewModel(
+    private val recipeRepository: RecipeRepository
+) : ViewModel(), CoroutineScope {
     // TODO: Implement the ViewModel
 
     override val coroutineContext: CoroutineContext
@@ -17,4 +17,13 @@ class HomeViewModel : ViewModel(), CoroutineScope {
         super.onCleared()
         coroutineContext.cancel()
     }
+
+
+
+    init {
+        launch {
+
+        }
+    }
+
 }

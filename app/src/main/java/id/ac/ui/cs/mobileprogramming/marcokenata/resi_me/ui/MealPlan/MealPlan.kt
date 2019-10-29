@@ -1,19 +1,19 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.MealPlan
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import dagger.android.support.AndroidSupportInjection
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
+import javax.inject.Inject
 
 class MealPlan : Fragment() {
 
-    companion object {
-        fun newInstance() = MealPlan()
-    }
+    @Inject
+    internal lateinit var viewModelFactory: MealPlanViewModelFactory
 
     private lateinit var viewModel: MealPlanViewModel
 
@@ -26,7 +26,8 @@ class MealPlan : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MealPlanViewModel::class.java)
+        AndroidSupportInjection.inject(this)
+        viewModel = ViewModelProviders.of(this,viewModelFactory).get(MealPlanViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

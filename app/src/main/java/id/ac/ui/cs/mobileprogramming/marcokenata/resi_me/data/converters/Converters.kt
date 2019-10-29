@@ -15,7 +15,17 @@ object Converters {
         val listType = object : TypeToken<ArrayList<String>>() {
 
         }.type
-        return Gson().fromJson<Any>(value, listType)
+        return Gson().fromJson(value, listType)
+        // return value == null ? null : new Date(value);
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun fromMeals(value: String): ArrayList<Int> {
+        val listType = object : TypeToken<ArrayList<Int>>() {
+
+        }.type
+        return Gson().fromJson(value, listType)
         // return value == null ? null : new Date(value);
     }
 

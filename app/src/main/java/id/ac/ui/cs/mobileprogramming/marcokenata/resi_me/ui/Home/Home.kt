@@ -6,10 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import dagger.android.support.AndroidSupportInjection
 
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
+import javax.inject.Inject
 
 class Home : Fragment() {
+
+    @Inject
+    internal lateinit var viewModelFactory: HomeViewModelFactory
 
     private lateinit var viewModel: HomeViewModel
 
@@ -22,8 +27,10 @@ class Home : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        // TODO: Use the ViewModel
+        AndroidSupportInjection.inject(this)
+        viewModel = ViewModelProviders.of(this,viewModelFactory).get(HomeViewModel::class.java)
     }
+
+
 
 }
