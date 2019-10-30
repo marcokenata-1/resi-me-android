@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.MealPlan
+package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.mealplans
 
 import android.os.Bundle
 import android.view.LayoutInflater

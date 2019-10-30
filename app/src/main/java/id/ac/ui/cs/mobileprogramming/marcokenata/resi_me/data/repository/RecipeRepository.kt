@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import dagger.Module
 import dagger.Provides
@@ -33,6 +34,7 @@ class RecipeRepository @Inject constructor(
     suspend fun fetchGetMealByRandom() : LiveData<DataResponse> {
         return withContext(Dispatchers.IO){
             recipeDataSource.getMealByRandom()
+
             return@withContext recipeDataSource.mealByRandom
         }
     }

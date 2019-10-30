@@ -4,9 +4,9 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.Home.HomeViewModel
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.MealPlan.MealPlanViewModel
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.SavedMenu.SavedMenuViewModel
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.homeview.HomeViewModel
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.mealplans.MealPlanViewModel
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.savedrecipes.SavedMenuViewModel
 
 @Module
 internal abstract class ViewModelModule {

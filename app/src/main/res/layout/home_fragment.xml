@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<layout>
+    <data>
+        <variable
+            name="random"
+            type="id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Meals" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.Home.Home">
+    tools:context=".ui.homeview.Home">
 
     <TextView
         android:id="@+id/tv_top_recipes"
@@ -34,15 +41,17 @@
         <ImageView
             android:id="@+id/iv_card_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_height="match_parent"
+            />
+git
         <TextView
+            android:id="@+id/tv_card_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginTop="170dp"
             android:layout_marginLeft="16dp"
-            android:text="spaghetti" />
+            android:text="@{random.strMeal, default=Loading}"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -76,3 +85,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

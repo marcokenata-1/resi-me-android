@@ -6,7 +6,6 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ResiMeApplication
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.repository.RecipeRepository
 import javax.inject.Singleton
 
 @Singleton

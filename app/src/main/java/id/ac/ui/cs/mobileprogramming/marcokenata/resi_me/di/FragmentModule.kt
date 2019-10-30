@@ -2,9 +2,9 @@ package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.Home.Home
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.MealPlan.MealPlan
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.SavedMenu.SavedMenu
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.homeview.Home
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.mealplans.MealPlan
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.savedrecipes.SavedMenu
 
 @Module
 abstract class FragmentModule() {

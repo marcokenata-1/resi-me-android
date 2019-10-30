@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.Home
+package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.mealplans
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -7,11 +7,13 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.repository.RecipeR
 import javax.inject.Inject
 
 @Module
-class HomeViewModelFactory @Inject constructor(private val recipeRepository: RecipeRepository) : ViewModelProvider.Factory {
+class MealPlanViewModelFactory @Inject constructor(private val recipeRepository: RecipeRepository) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return HomeViewModel(recipeRepository) as T
+        return MealPlanViewModel(
+            recipeRepository
+        ) as T
     }
 
 }

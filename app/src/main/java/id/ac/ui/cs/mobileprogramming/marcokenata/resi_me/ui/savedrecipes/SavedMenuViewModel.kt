@@ -1,14 +1,17 @@
-package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.Home
+package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.savedrecipes
 
 import androidx.lifecycle.ViewModel
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.repository.RecipeRepository
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
 import kotlin.coroutines.CoroutineContext
 
-class HomeViewModel(
+class SavedMenuViewModel(
     private val recipeRepository: RecipeRepository
 ) : ViewModel(), CoroutineScope {
-    // TODO: Implement the ViewModel
+
 
     override val coroutineContext: CoroutineContext
         get() = SupervisorJob() + Dispatchers.Main
@@ -17,13 +20,4 @@ class HomeViewModel(
         super.onCleared()
         coroutineContext.cancel()
     }
-
-
-
-    init {
-        launch {
-
-        }
-    }
-
 }

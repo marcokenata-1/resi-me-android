@@ -5,6 +5,6 @@
     <string name="meal_plan">meal plan</string>
 
     <!-- home page -->
-    <string name="top_recipes">top recipes</string>
+    <string name="top_recipes">random recipes of the web</string>
     <string name="popular_recipes">popular recipes</string>
 </resources>
