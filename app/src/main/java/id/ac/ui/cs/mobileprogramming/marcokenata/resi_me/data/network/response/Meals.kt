@@ -1,5 +1,9 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response
 
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
+
 data class Meals (
     val idMeal : String,
     val strMeal: String,
@@ -7,7 +11,7 @@ data class Meals (
     val strCategory: String,
     val strArea: String,
     val strInstructions: String,
-    val mealThumb: String,
+    val strMealThumb: String,
     val strTags: String,
     val strYoutube: String,
     val strIngredients1: String,
@@ -53,3 +57,4 @@ data class Meals (
     val strSource: String,
     val dateModified: String?
     )
+

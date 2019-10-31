@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/nav_host_fragment"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -24,6 +24,7 @@
         app:itemTextColor="@color/colorPrimary"
         app:itemIconTint="@color/colorPrimary"
         android:layout_height="wrap_content"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
         app:menu="@menu/navbar_menu"/>
 
 </LinearLayout>

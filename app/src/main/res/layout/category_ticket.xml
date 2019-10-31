@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="category"
+            type="id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.CategorySubs" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_category"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="100dp"
+        app:ticketImage="@{category.strCategoryThumb}"
+        android:layout_height="100dp" />
+    
+    <TextView
+        android:id="@+id/tv_category"
+        app:layout_constraintTop_toBottomOf="@id/iv_category"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="@{category.strCategory}"/>
+        
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

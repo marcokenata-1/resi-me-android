@@ -12,6 +12,8 @@ import androidx.lifecycle.ViewModelProviders
 import dagger.android.support.AndroidSupportInjection
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.databinding.HomeFragmentBinding
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.adapters.CategoryAdapter
+import kotlinx.android.synthetic.main.home_fragment.*
 import javax.inject.Inject
 
 class Home : Fragment() {
@@ -22,6 +24,8 @@ class Home : Fragment() {
     private lateinit var viewModel: HomeViewModel
 
     lateinit var binding: HomeFragmentBinding
+
+    var adapter : CategoryAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,9 +41,13 @@ class Home : Fragment() {
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(HomeViewModel::class.java)
 
         viewModel.getRandom.observe(this, Observer { value ->
-            binding.random = value.meals.get(0)
+            binding.random = value.meals[0]
         })
 
+        viewModel.getCategory.observe(this, Observer { value ->
+            adapter = CategoryAdapter(context,value.categories)
+            gv_categories.adapter = adapter
+        })
     }
 
 

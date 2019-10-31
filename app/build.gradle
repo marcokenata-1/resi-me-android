@@ -94,4 +94,7 @@ dependencies {
 
     //logger interceptor
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.0'
+
+    implementation 'com.mikhaellopez:circularimageview:3.2.0'
+
 }

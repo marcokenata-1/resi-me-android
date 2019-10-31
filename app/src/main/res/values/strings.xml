@@ -6,5 +6,5 @@
 
     <!-- home page -->
     <string name="top_recipes">random recipes of the web</string>
-    <string name="popular_recipes">popular recipes</string>
+    <string name="popular_recipes">categories</string>
 </resources>
