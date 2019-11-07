@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="recipe"
+            type="id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Meals" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ingredient.Ingredient">
+
+    <TextView
+        android:id="@+id/tv_selected"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selected"/>
+
+    <TextView
+        android:id="@+id/tv_strMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_selected"
+        android:layout_marginTop="16dp"
+        android:text="@{recipe.strMeal}"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/iv_display_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_strMeal"
+        android:layout_marginTop="16dp"
+        app:selectorImage="@{recipe.strMealThumb}" />
+
+    <TextView
+        android:id="@+id/tv_ingredient_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_display_image"
+        android:layout_marginTop="16dp"
+        android:text="@string/ingredients" />
+
+    <TextView
+        android:id="@+id/tv_ingredient_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_string"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure1+" "+recipe.strIngredient1}' />
+
+    <TextView
+        android:id="@+id/tv_ingredient_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_1"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure2+" "+recipe.strIngredient2}' />
+
+    <TextView
+        android:id="@+id/tv_ingredient_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_2"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure3+" "+recipe.strIngredient3}' />
+
+    <TextView
+        android:id="@+id/tv_ingredient_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_3"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure4+" "+recipe.strIngredient4}' />
+    <TextView
+        android:id="@+id/tv_ingredient_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_4"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure5+" "+recipe.strIngredient5}' />
+    <TextView
+        android:id="@+id/tv_ingredient_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_5"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure6+" "+recipe.strIngredient6}' />
+    <TextView
+        android:id="@+id/tv_ingredient_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_6"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure7+" "+recipe.strIngredient7}' />
+    <TextView
+        android:id="@+id/tv_ingredient_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_7"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure8+" "+recipe.strIngredient8}' />
+    <TextView
+        android:id="@+id/tv_ingredient_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_8"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure9+" "+recipe.strIngredient9}' />
+    <TextView
+        android:id="@+id/tv_ingredient_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_9"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure10+" "+recipe.strIngredient3}' />
+    <TextView
+        android:id="@+id/tv_ingredient_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_10"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure11+" "+recipe.strIngredient11}' />
+    <TextView
+        android:id="@+id/tv_ingredient_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_11"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure12+" "+recipe.strIngredient12}' />
+    <TextView
+        android:id="@+id/tv_ingredient_13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_12"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure13+" "+recipe.strIngredient13}' />
+    <TextView
+        android:id="@+id/tv_ingredient_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_13"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure14+" "+recipe.strIngredient14}' />
+    <TextView
+        android:id="@+id/tv_ingredient_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_14"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure15+" "+recipe.strIngredient15}' />
+    <TextView
+        android:id="@+id/tv_ingredient_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_15"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure16+" "+recipe.strIngredient16}' />
+    <TextView
+        android:id="@+id/tv_ingredient_17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_16"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure17+" "+recipe.strIngredient17}' />
+    <TextView
+        android:id="@+id/tv_ingredient_18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_17"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure18+" "+recipe.strIngredient18}' />
+    <TextView
+        android:id="@+id/tv_ingredient_19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_18"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure19+" "+recipe.strIngredient19}' />
+    <TextView
+        android:id="@+id/tv_ingredient_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_19"
+        android:layout_marginTop="16dp"
+        android:text='@{recipe.strMeasure20+" "+recipe.strIngredient20}' />
+
+    <Button
+        android:id="@+id/bt_lets_cook"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorAccent"
+        android:text="let's cook"
+        android:textSize="16dp"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ingredient_20" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>

@@ -10,8 +10,8 @@ interface RecipeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertSavedRecipes(savedRecipes: SavedRecipes)
 
-    @Query("select * from saved_recipes where mealId like :id")
-    fun displayRecipe(id: Int) : SavedRecipes
+    @Query("select * from saved_recipes where idMeal like :id")
+    fun displayRecipe(id : Int) : SavedRecipes
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMealPlan(mealPlans: MealPlans)

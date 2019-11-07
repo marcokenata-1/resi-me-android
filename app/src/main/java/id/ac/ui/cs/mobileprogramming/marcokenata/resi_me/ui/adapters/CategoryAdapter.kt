@@ -1,6 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.CategorySubs
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.databinding.CategoryTicketBinding
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.CategoryActivity
 
 class CategoryAdapter : BaseAdapter {
 
@@ -26,6 +28,13 @@ class CategoryAdapter : BaseAdapter {
         val bindingTicket : CategoryTicketBinding = DataBindingUtil.inflate(inflator, R.layout.category_ticket,null,false)
 
         bindingTicket.category = category
+
+        bindingTicket.root.setOnClickListener {
+            val intent = Intent(context,CategoryActivity::class.java)
+            intent.putExtra("strCategory",category.strCategory)
+            context?.startActivity(intent)
+        }
+
         return bindingTicket.root
     }
 

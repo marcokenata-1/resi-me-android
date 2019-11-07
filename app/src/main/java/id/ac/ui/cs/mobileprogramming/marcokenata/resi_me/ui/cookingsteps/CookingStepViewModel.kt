@@ -1,16 +1,15 @@
-package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.savedrecipes
+package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.cookingsteps
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.db.SavedRecipes
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Meals
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.repository.RecipeRepository
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
-class SavedMenuViewModel(
+class CookingStepViewModel(
     private val recipeRepository: RecipeRepository
 ) : ViewModel(), CoroutineScope {
-
 
     override val coroutineContext: CoroutineContext
         get() = SupervisorJob() + Dispatchers.Main
@@ -20,11 +19,15 @@ class SavedMenuViewModel(
         coroutineContext.cancel()
     }
 
-    val savedRecipes = MutableLiveData<List<SavedRecipes>>()
+    val recipeLiveData = MutableLiveData<Meals>()
 
-    init {
+    fun getId(id: Int){
         launch {
-            savedRecipes.value = recipeRepository.fetchSavedRecipesList().value
+            recipeLiveData.value = recipeRepository.fetchSavedRecipeByMeal(id).value?.meals
+            if (recipeLiveData.value == null){
+                recipeLiveData.value = recipeRepository.fetchGetMealById(id).value?.meals?.get(0)
+            }
         }
     }
+
 }

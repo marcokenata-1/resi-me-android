@@ -11,6 +11,7 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.RecipeData
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Categories
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.CategoryParent
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.DataResponse
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Meals
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -62,7 +63,7 @@ class RecipeRepository @Inject constructor(
     }
 
     @Provides
-    suspend fun fetchSavedRecipeById(id: Int) : LiveData<SavedRecipes> {
+    suspend fun fetchSavedRecipeByMeal(id: Int) : LiveData<SavedRecipes> {
         return withContext(Dispatchers.IO){
             recipeDBDataSource.displaySavedRecipe(id)
             return@withContext recipeDBDataSource.displaySavedRecipes

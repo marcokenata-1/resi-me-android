@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Resi-Me</string>
+    <string name="meal_plan">perencanaan</string>
+    <string name="popular_recipes">kategori</string>
+    <string name="saved_recipes">resep tersimpan</string>
+    <string name="top_recipes">resep hari ini</string>
+    <string name="home">home</string>
+    <string name="selected">anda memilih..</string>
+    <string name="ingredients">bahan yang diperlukan :</string>
+    <string name="cooking_steps">langkah-langkah memasak</string>
+</resources>

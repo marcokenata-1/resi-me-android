@@ -2,14 +2,18 @@
 
 <layout>
     <data>
+        <import type="android.view.View"/>
         <variable
             name="random"
             type="id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Meals" />
+        <variable
+            name="viewmodel"
+            type="id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.homeview.HomeViewModel" />
     </data>
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/scrollView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,65 +23,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.homeview.Home">
 
-
-
     <TextView
         android:id="@+id/tv_top_recipes"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/cv_top_recipes"
+        app:layout_constraintBottom_toTopOf="@id/iv_card_view"
         app:layout_constraintLeft_toLeftOf="parent"
         android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="16sp"
         android:text="@string/top_recipes" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_top_recipes"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_top_recipes"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="16dp"
-        android:layout_height="200dp"
-        android:layout_width="350dp">
 
         <ImageView
             android:id="@+id/iv_card_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_top_recipes"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            app:cardViewImage="@{random.strMealThumb}"/>
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_height="200dp"
+            android:layout_width="0dp"
+            app:cardViewImage="@{random.strMealThumb}"
+            />
 
         <TextView
+            app:layout_constraintTop_toBottomOf="@id/iv_card_view"
+            app:layout_constraintLeft_toLeftOf="parent"
             android:id="@+id/tv_card_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
             android:fontFamily="@font/montserrat_bold"
-            android:layout_marginTop="170dp"
-            android:layout_marginLeft="16dp"
-            android:textColor="#ffffff"
-            android:text="@{random.strMeal, default=Loading}"/>
+            android:text="@{random.strMeal, default=Loading}"
+            android:textColor="@color/colorPrimary" />
 
-    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_popular_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/popular_recipes"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@id/cv_top_recipes" />
+        app:layout_constraintTop_toBottomOf="@id/tv_card_view" />
 
     <GridView
         android:id="@+id/gv_categories"
@@ -90,8 +95,6 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_height="600dp" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

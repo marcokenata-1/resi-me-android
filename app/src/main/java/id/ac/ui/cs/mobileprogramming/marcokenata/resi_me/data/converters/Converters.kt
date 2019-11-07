@@ -41,6 +41,30 @@ object Converters {
     fun arraylistNumberToString(list: ArrayList<Int>?): String {
         val gson = Gson()
         return gson.toJson(list)
+    }
 
+    @TypeConverter
+    @JvmStatic
+    fun stringtoMeals(value:String): Meals {
+        val listType = object : TypeToken<Meals>() {
+
+        }.type
+        return Gson().fromJson(value, listType)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun arraylistMealsToString(list: ArrayList<Meals>?): String {
+        val gson = Gson()
+        return gson.toJson(list)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun stringtoArraylistMeals(value: String) : ArrayList<Meals> {
+        val listType = object : TypeToken<ArrayList<Meals>>() {
+
+        }.type
+        return Gson().fromJson(value, listType)
     }
 }

@@ -8,7 +8,7 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.converters.Convert
 
 @Database(
     entities = [SavedRecipes::class,MealPlans::class],
-    version = 2,
+    version = 8,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

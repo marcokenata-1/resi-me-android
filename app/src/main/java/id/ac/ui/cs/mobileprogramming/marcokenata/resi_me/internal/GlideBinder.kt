@@ -21,5 +21,29 @@ class GlideBinder {
                 .load(backdropPath)
                 .into(imageView)
         }
+
+        @BindingAdapter("selectorImage")
+        @JvmStatic
+        fun loadSelectedImage(imageView: ImageView, backdropPath: String?) {
+            Glide.with(imageView.context)
+                .load(backdropPath)
+                .into(imageView)
+        }
+
+        @BindingAdapter("congratulationsImage")
+        @JvmStatic
+        fun loadCongratulationsImage(imageView: ImageView, backdropPath: String?) {
+            Glide.with(imageView.context)
+                .load(backdropPath)
+                .into(imageView)
+        }
+
+        @BindingAdapter("recipeTicketImage")
+        @JvmStatic
+        fun loadRecipeTicketImage(imageView: ImageView, backdropPath: String?) {
+            Glide.with(imageView.context)
+                .load(backdropPath)
+                .into(imageView)
+        }
     }
 }

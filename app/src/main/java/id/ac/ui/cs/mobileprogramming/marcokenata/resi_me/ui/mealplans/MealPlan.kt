@@ -28,7 +28,6 @@ class MealPlan : Fragment() {
         super.onActivityCreated(savedInstanceState)
         AndroidSupportInjection.inject(this)
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(MealPlanViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

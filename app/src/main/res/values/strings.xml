@@ -7,4 +7,10 @@
     <!-- home page -->
     <string name="top_recipes">random recipes of the web</string>
     <string name="popular_recipes">categories</string>
+    <string name="title_activity_recipe">RecipeActivity</string>
+    <string name="selected">you selected..</string>
+    <string name="ingredients">ingredients :</string>
+    <string name="process_cook">let\'s cook</string>
+    <string name="back">back</string>
+    <string name="cooking_steps">steps of cooking</string>
 </resources>

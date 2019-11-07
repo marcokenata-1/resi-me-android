@@ -13,20 +13,20 @@
         android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="16dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="16sp"
         android:text="@string/saved_recipes" />
 
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
+        android:id="@+id/lv_recipes"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_saved_recipes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

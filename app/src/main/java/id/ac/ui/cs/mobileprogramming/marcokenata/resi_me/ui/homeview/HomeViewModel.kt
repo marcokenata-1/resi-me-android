@@ -1,9 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.homeview
 
-import android.util.Log
-import androidx.databinding.BaseObservable
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Categories
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.DataResponse

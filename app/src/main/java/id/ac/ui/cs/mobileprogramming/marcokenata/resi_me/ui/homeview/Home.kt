@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.homeview
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import dagger.android.support.AndroidSupportInjection
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.databinding.HomeFragmentBinding
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.adapters.CategoryAdapter
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.RecipeActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 import javax.inject.Inject
 
@@ -42,12 +44,19 @@ class Home : Fragment() {
 
         viewModel.getRandom.observe(this, Observer { value ->
             binding.random = value.meals[0]
+            iv_card_view.setOnClickListener{
+                val intent = Intent(context, RecipeActivity::class.java)
+                intent.putExtra("idMeal",value.meals[0].idMeal)
+                context?.startActivity(intent)
+            }
         })
 
         viewModel.getCategory.observe(this, Observer { value ->
             adapter = CategoryAdapter(context,value.categories)
             gv_categories.adapter = adapter
         })
+
+
     }
 
 

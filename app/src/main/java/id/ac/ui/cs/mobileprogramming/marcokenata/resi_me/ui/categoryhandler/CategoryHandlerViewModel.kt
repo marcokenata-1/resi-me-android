@@ -1,13 +1,13 @@
-package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.savedrecipes
+package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.categoryhandler
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.db.SavedRecipes
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.CategoryParent
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.repository.RecipeRepository
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
-class SavedMenuViewModel(
+class CategoryHandlerViewModel(
     private val recipeRepository: RecipeRepository
 ) : ViewModel(), CoroutineScope {
 
@@ -20,11 +20,11 @@ class SavedMenuViewModel(
         coroutineContext.cancel()
     }
 
-    val savedRecipes = MutableLiveData<List<SavedRecipes>>()
+    val categoryLiveData = MutableLiveData<CategoryParent>()
 
-    init {
+    fun getCategory(category: String){
         launch {
-            savedRecipes.value = recipeRepository.fetchSavedRecipesList().value
+            categoryLiveData.value = recipeRepository.fetchGetMealsByCategory(category).value
         }
     }
 }
