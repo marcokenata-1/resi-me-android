@@ -19,19 +19,31 @@
         android:textSize="16sp"
         android:text="@string/meal_plan" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+    <Button
+        android:id="@+id/bt_meal_plan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textAllCaps="false"
+        android:background="#ffffff"
+        android:textColor="@color/colorPrimary"
+        android:text="add new meal plan "/>
 
     <ListView
-        android:layout_width="wrap_content"
+        android:id="@+id/lv_meal_plan"
+        android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_meal_plan" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

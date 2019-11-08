@@ -4,30 +4,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.savedrecipes.SavedMenu">
+    tools:context=".ui.mealplandisplay.MealPlanDisplay">
 
     <TextView
-        android:id="@+id/tv_saved_recipes"
+        android:id="@+id/tv_meal_plan_title"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
         android:layout_width="wrap_content"
-        android:layout_marginTop="60dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:textSize="16sp"
-        android:text="@string/saved_recipes" />
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tv_cuisines_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_meal_plan_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="recipes" />
 
     <ListView
         android:id="@+id/lv_recipes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_saved_recipes"
+        app:layout_constraintTop_toBottomOf="@id/tv_cuisines_title"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,19 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.mealplans
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.AdderActivity
+import androidx.navigation.findNavController
 import dagger.android.support.AndroidSupportInjection
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.adapters.MealPlanAdapter
+import kotlinx.android.synthetic.main.meal_plan_fragment.*
 import javax.inject.Inject
 
 class MealPlan : Fragment() {
@@ -16,6 +22,8 @@ class MealPlan : Fragment() {
     internal lateinit var viewModelFactory: MealPlanViewModelFactory
 
     private lateinit var viewModel: MealPlanViewModel
+
+    var adapter : MealPlanAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +36,18 @@ class MealPlan : Fragment() {
         super.onActivityCreated(savedInstanceState)
         AndroidSupportInjection.inject(this)
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(MealPlanViewModel::class.java)
+
+        viewModel.mealPlanLiveData.observe(this, Observer {
+            adapter = MealPlanAdapter(context,it)
+            lv_meal_plan.adapter = adapter
+        })
+
+        bt_meal_plan.setOnClickListener {
+            val intent = Intent(context,AdderActivity::class.java)
+            context?.startActivity(intent)
+        }
+
+
     }
 
 }

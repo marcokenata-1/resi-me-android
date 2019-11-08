@@ -7,7 +7,8 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.M
 @Entity(tableName = "saved_recipes")
 data class SavedRecipes (
     val idMeal : Int,
-    val meals: Meals?
+    val meals: Meals?,
+    var isChecked : Boolean = false
 ){
     @PrimaryKey(autoGenerate = true)
     var id : Int = 0

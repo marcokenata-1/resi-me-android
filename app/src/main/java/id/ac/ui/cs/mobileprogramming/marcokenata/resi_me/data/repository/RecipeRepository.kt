@@ -1,6 +1,5 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import dagger.Module
 import dagger.Provides
@@ -11,7 +10,6 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.RecipeData
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Categories
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.CategoryParent
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.DataResponse
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Meals
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -35,7 +33,6 @@ class RecipeRepository @Inject constructor(
     suspend fun fetchGetMealByRandom() : LiveData<DataResponse> {
         return withContext(Dispatchers.IO){
             recipeDataSource.getMealByRandom()
-
             return@withContext recipeDataSource.mealByRandom
         }
     }
@@ -91,6 +88,14 @@ class RecipeRepository @Inject constructor(
         return withContext(Dispatchers.IO){
             recipeDBDataSource.displayMealPlanList()
             return@withContext recipeDBDataSource.displayMealPlanList
+        }
+    }
+
+    @Provides
+    suspend fun fetchMealPlan(id:Int) : LiveData<MealPlans> {
+        return withContext(Dispatchers.IO){
+            recipeDBDataSource.displayMealPlan(id)
+            return@withContext recipeDBDataSource.displayMealPlan
         }
     }
 }

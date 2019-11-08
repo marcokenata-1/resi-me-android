@@ -9,4 +9,5 @@
     <string name="selected">anda memilih..</string>
     <string name="ingredients">bahan yang diperlukan :</string>
     <string name="cooking_steps">langkah-langkah memasak</string>
+    <string name="back">kembali</string>
 </resources>

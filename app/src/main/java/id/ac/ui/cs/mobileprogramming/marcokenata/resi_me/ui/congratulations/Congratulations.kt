@@ -45,8 +45,8 @@ class Congratulations : Fragment() {
         viewModel.recipeLiveData.observe(this, Observer { value ->
             binding.recipe = value
             tv_back.setOnClickListener{
-                val intent = Intent(context,MainActivity::class.java)
-                context?.startActivity(intent)
+                val intent1 = Intent(context,MainActivity::class.java)
+                context?.startActivity(intent1)
             }
             tv_save.setOnClickListener {
                 if (viewModel.saved.equals("tidak")){

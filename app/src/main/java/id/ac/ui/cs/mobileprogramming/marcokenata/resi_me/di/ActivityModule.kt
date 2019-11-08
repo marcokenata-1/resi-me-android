@@ -2,9 +2,7 @@ package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.CategoryActivity
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.MainActivity
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.RecipeActivity
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.*
 
 @Module
 abstract class ActivityModule {
@@ -17,4 +15,10 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     internal abstract fun categoryActivityInjector() : CategoryActivity
+
+    @ContributesAndroidInjector
+    internal abstract fun adderActivityInjector() : AdderActivity
+
+    @ContributesAndroidInjector
+    internal abstract fun mealPlanActivityInjector() : MealPlanActivity
 }

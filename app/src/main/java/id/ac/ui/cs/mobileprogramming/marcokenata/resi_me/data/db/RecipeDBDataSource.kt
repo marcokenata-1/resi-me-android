@@ -27,6 +27,11 @@ class RecipeDBDataSource @Inject constructor(private val recipeDao: RecipeDao) {
     val displayMealPlanList : LiveData<List<MealPlans>>
         get() = _displayMealPlanList
 
+    private val _displayMealPlan = MutableLiveData<MealPlans>()
+
+    val displayMealPlan : LiveData<MealPlans>
+        get() = _displayMealPlan
+
     @Provides
     suspend fun insertSavedRecipe(savedRecipes: SavedRecipes){
         return withContext(Dispatchers.IO){
@@ -59,6 +64,13 @@ class RecipeDBDataSource @Inject constructor(private val recipeDao: RecipeDao) {
     suspend fun displayMealPlanList(){
         return withContext(Dispatchers.IO){
             _displayMealPlanList.postValue(recipeDao.displayMealPlanList())
+        }
+    }
+
+    @Provides
+    suspend fun displayMealPlan(id:Int){
+        return withContext(Dispatchers.IO){
+            _displayMealPlan.postValue(recipeDao.fetchMealPlan(id))
         }
     }
 }

@@ -45,5 +45,13 @@ class GlideBinder {
                 .load(backdropPath)
                 .into(imageView)
         }
+
+        @BindingAdapter("selectorTicketImage")
+        @JvmStatic
+        fun loadSelectorTicketImage(imageView: ImageView, backdropPath: String?) {
+            Glide.with(imageView.context)
+                .load(backdropPath)
+                .into(imageView)
+        }
     }
 }

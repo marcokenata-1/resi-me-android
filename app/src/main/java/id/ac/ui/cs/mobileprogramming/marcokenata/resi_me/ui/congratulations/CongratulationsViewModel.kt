@@ -44,7 +44,7 @@ class CongratulationsViewModel(
         }
     }
 
-    fun recipeSaved(){
+    private fun recipeSaved(){
         if (recipeChecker.value == null) {
             saved = "tidak"
         } else {

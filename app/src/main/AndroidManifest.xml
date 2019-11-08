@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.CategoryActivity"></activity>
+        <activity android:name=".ui.MealPlanActivity"></activity>
+        <activity android:name=".ui.AdderActivity" />
+        <activity android:name=".ui.CategoryActivity" />
         <activity
             android:name=".ui.RecipeActivity"
             android:label="@string/title_activity_recipe"

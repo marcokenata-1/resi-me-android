@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_adder"
+    app:startDestination="@id/mealPlanAdder">
+
+    <fragment
+        android:id="@+id/mealPlanAdder"
+        android:name="id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.addmealplan.MealPlanAdder"
+        android:label="meal_plan_adder_fragment"
+        tools:layout="@layout/meal_plan_adder_fragment" />
+</navigation>

@@ -21,4 +21,8 @@ interface RecipeDao {
 
     @Query("select * from meal_plans")
     fun displayMealPlanList() : List<MealPlans>
+
+    @Query("select * from meal_plans where id like :id")
+    fun fetchMealPlan(id: Int) : MealPlans
+
 }
