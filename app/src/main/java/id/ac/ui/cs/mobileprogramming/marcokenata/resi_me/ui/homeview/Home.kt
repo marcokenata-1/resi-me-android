@@ -2,7 +2,6 @@ package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.homeview
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,12 +15,9 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.databinding.HomeFragmentBinding
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.RecipeActivity
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.adapters.CategoryAdapter
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.BuildConfig
 import kotlinx.android.synthetic.main.home_fragment.*
 import java.io.*
 import javax.inject.Inject
-
-
 
 
 class Home : Fragment() {
@@ -76,7 +72,6 @@ class Home : Fragment() {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = uri
             intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             context?.startActivity(intent)
         }
 
