@@ -26,8 +26,6 @@ class NotificationReceiver : BroadcastReceiver() {
         val intent = Intent(p0, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
 
-        Log.d("calendar",p1?.extras?.get("calendar").toString())
-
         val pendingIntent = PendingIntent.getActivity(p0,100,intent,PendingIntent.FLAG_UPDATE_CURRENT)
 
         val builder : NotificationCompat.Builder = NotificationCompat.Builder(p0,channelId)

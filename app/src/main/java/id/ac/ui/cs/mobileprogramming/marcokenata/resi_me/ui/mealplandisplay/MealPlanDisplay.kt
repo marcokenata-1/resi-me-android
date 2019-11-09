@@ -78,10 +78,10 @@ class MealPlanDisplay : Fragment() {
         }
 
         bt_reminder.setOnClickListener {
-            val intent1 = Intent(context,NotificationService::class.java)
-            intent1.putExtra("calendar",myCalendar)
+            val intentReminder = Intent(context,NotificationService::class.java)
+            intentReminder.putExtra("calendar",myCalendar)
             Toast.makeText(context,R.string.reminder_is_set,Toast.LENGTH_SHORT).show()
-            activity?.startService(intent1)
+            activity?.startService(intentReminder)
         }
 
 

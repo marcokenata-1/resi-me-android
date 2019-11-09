@@ -21,9 +21,8 @@ class NotificationService : Service() {
         val calendar = intent2?.get("calendar") as Calendar
         Log.d("calendar",""+calendar.get(Calendar.HOUR_OF_DAY)+" "+calendar.get(Calendar.MINUTE))
 
-        val intent1 = Intent(applicationContext, NotificationReceiver::class.java)
-        intent1.putExtra("calendar","messi ke iniesta bung")
-        val pendingIntent = PendingIntent.getBroadcast(applicationContext,100,intent1,PendingIntent.FLAG_UPDATE_CURRENT)
+        val intentReceiver = Intent(applicationContext, NotificationReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(applicationContext,100,intentReceiver,PendingIntent.FLAG_UPDATE_CURRENT)
 
         val alarmManager : AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.timeInMillis,pendingIntent)
