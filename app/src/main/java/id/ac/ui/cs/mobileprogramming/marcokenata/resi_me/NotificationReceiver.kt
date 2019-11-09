@@ -16,16 +16,12 @@ class NotificationReceiver : BroadcastReceiver() {
     override fun onReceive(p0: Context?, p1: Intent?) {
         val notificationManager = p0?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-
-
-            val channelId = "app_channel_id"
-            val channelName = "app_channel_name"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val notificationChannel =
-                NotificationChannel(channelId, channelName, importance)
-            notificationManager.createNotificationChannel(notificationChannel)
-
-
+        val channelId = "app_channel_id"
+        val channelName = "app_channel_name"
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val notificationChannel =
+            NotificationChannel(channelId, channelName, importance)
+        notificationManager.createNotificationChannel(notificationChannel)
 
         val intent = Intent(p0, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP

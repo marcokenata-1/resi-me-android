@@ -50,7 +50,7 @@ class MealPlanAdder : Fragment() {
         bt_add_meal.setOnClickListener {
             viewModel.addMeal(MealPlans(et_name.text.toString(),adapter!!.getAll()))
             val intentMain = Intent(context,MainActivity::class.java)
-            Toast.makeText(context,"Meal Plan Added", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,R.string.meal_plan_added, Toast.LENGTH_SHORT).show()
             context?.startActivity(intentMain)
         }
 

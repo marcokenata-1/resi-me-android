@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Resi-Me</string>
+    <string name="app_name">resi-me</string>
     <string name="saved_recipes">saved recipes</string>
     <string name="home">home</string>
     <string name="meal_plan">meal plan</string>
@@ -13,4 +13,24 @@
     <string name="process_cook">let\'s cook</string>
     <string name="back">back</string>
     <string name="cooking_steps">steps of cooking</string>
+    <string name="cuisines">cuisines</string>
+    <string name="congratulations">congratulations</string>
+    <string name="successfully_made">you\'ve successfully made..</string>
+    <string name="save_recipe">save recipe</string>
+    <string name="back_to_menu">back to menu</string>
+    <string name="done">DONE!</string>
+    <string name="add_new_plan">add new plan</string>
+    <string name="name">name</string>
+    <string name="select_cuisine">select cuisine</string>
+    <string name="schedule">schedule</string>
+    <string name="set_meal_plan_for">set the meal plan for..</string>
+    <string name="click_date">click to select date</string>
+    <string name="click_time">click to select time</string>
+    <string name="set_reminder">set reminder</string>
+    <string name="reminder_is_set">reminder is set!</string>
+    <string name="recipe_saved">recipe saved!</string>
+    <string name="saved_already">you\'ve already saved this recipe</string>
+    <string name="meal_plan_added">meal plan added!</string>
+    <string name="notif_reminder">You have a meal plan today! Don\'t forget to shop for the ingredients!</string>
+    <string name="tap_once_more_exit">Press once more to exit</string>
 </resources>

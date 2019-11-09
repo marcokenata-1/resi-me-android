@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         if (pressed){
             finish()
         } else {
-            Toast.makeText(this,"Tekan sekali lagi untuk keluar",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,R.string.tap_once_more_exit,Toast.LENGTH_SHORT).show()
             pressed = true
         }
     }

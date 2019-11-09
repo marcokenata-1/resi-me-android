@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Resi-Me</string>
+    <string name="app_name">resi-me</string>
     <string name="meal_plan">perencanaan</string>
     <string name="popular_recipes">kategori</string>
     <string name="saved_recipes">resep tersimpan</string>
@@ -10,4 +10,25 @@
     <string name="ingredients">bahan yang diperlukan :</string>
     <string name="cooking_steps">langkah-langkah memasak</string>
     <string name="back">kembali</string>
+    <string name="process_cook">ayo memasak</string>
+    <string name="cuisines">resep</string>
+    <string name="congratulations">selamat</string>
+    <string name="successfully_made">anda telah berhasil memasak..</string>
+    <string name="save_recipe">simpan resep</string>
+    <string name="back_to_menu">kembali ke menu</string>
+    <string name="done">SELESAI!</string>
+    <string name="add_new_plan">tambah rencana makan baru</string>
+    <string name="name">nama</string>
+    <string name="select_cuisine">pilih resep</string>
+    <string name="schedule">jadwal</string>
+    <string name="set_meal_plan_for">tambahkan rencana untuk..</string>
+    <string name="click_date">klik untuk memilih tanggal</string>
+    <string name="click_time">klik untuk memilih waktu</string>
+    <string name="set_reminder">pasang pengingat</string>
+    <string name="reminder_is_set">pengingat telah disetel!</string>
+    <string name="recipe_saved">resep tersimpan!</string>
+    <string name="saved_already">anda sudah pernah menyimpan resep ini</string>
+    <string name="meal_plan_added">rencana makan ditambah!</string>
+    <string name="notif_reminder">Anda memiliki perencanaan makan hari ini! Jangan lupa membeli bahan-bahan ya!</string>
+    <string name="tap_once_more_exit">Tekan sekali lagi untuk keluar</string>
 </resources>

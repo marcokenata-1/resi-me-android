@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-        android:text="recipes" />
+        android:text="@string/cuisines" />
 
     <ListView
         android:id="@+id/lv_recipes"
@@ -44,7 +44,7 @@
         android:id="@+id/tv_scheduler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="schedule"
+        android:text="@string/schedule"
         app:layout_constraintTop_toBottomOf="@id/lv_recipes"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
@@ -60,7 +60,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="16dp"
         android:textColor="@color/colorPrimary"
-        android:text="set the meal plan for.."
+        android:text="@string/set_meal_plan_for"
         android:layout_marginLeft="16dp" />
 
 
@@ -72,7 +72,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="16dp"
         android:clickable="true"
-        android:text="click to select date"
+        android:text="@string/click_date"
         android:textColor="@color/colorPrimary"
         android:focusable="false"
         android:layout_marginRight="16dp"
@@ -90,8 +90,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:textColor="@color/colorPrimary"
-        android:background="@color/colorAccent"
-        android:text="set reminder"
+        android:background="#ffffff"
+        android:text="@string/set_reminder"
         android:textAllCaps="false"
         android:layout_marginBottom="16dp" />
 
@@ -104,7 +104,7 @@
         android:clickable="true"
         android:textColor="@color/colorPrimary"
         android:focusable="false"
-        android:text="click to select time"
+        android:text="@string/click_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="16dp"

@@ -51,10 +51,10 @@ class Congratulations : Fragment() {
             tv_save.setOnClickListener {
                 if (viewModel.saved.equals("tidak")){
                     viewModel.saveRecipe(idMeal)
-                    Toast.makeText(context, "Recipe Saved", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.recipe_saved, Toast.LENGTH_SHORT).show()
                     tv_save.visibility = View.GONE
                 } else {
-                    Toast.makeText(context, "You have already saved this recipe", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.saved_already, Toast.LENGTH_SHORT).show()
                     tv_save.visibility = View.GONE
                 }
             }

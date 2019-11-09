@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textAlignment="center"
-        android:text="DONE!"
+        android:text="@string/done"
         app:layout_constraintLeft_toLeftOf="parent"
         android:textColor="@color/colorPrimary"
         app:layout_constraintTop_toBottomOf="@id/tv_instruction"
