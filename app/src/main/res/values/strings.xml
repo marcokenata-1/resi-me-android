@@ -33,4 +33,5 @@
     <string name="meal_plan_added">meal plan added!</string>
     <string name="notif_reminder">You have a meal plan today! Don\'t forget to shop for the ingredients!</string>
     <string name="tap_once_more_exit">Press once more to exit</string>
+    <string name="no_connection">there\'s no connection</string>
 </resources>

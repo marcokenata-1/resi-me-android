@@ -8,6 +8,7 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import dagger.android.support.HasSupportFragmentInjector
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.di.DaggerAppComponent
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.di.NetModule
 import javax.inject.Inject
 
 class ResiMeApplication : Application(), HasActivityInjector, HasSupportFragmentInjector {
@@ -23,8 +24,11 @@ class ResiMeApplication : Application(), HasActivityInjector, HasSupportFragment
 
         DaggerAppComponent.builder()
             .application(this)
+//            .netModuleImplementation(NetModule(context = this.applicationContext))
             .build()
             .inject(this)
+
+
     }
 
     override fun activityInjector(): AndroidInjector<Activity> = activityDispatchingAndroidInjector

@@ -40,6 +40,7 @@ class NetModule {
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         return OkHttpClient.Builder()
             .addInterceptor(interceptor)
+//            .addInterceptor(isOnline())
             .addInterceptor(requestInterceptor)
             .build()
     }
@@ -55,4 +56,22 @@ class NetModule {
             .build()
             .create(MealDBService::class.java)
     }
+
+
+
+//    @Provides
+//    @Singleton
+//    fun isOnline(context: Context?) : Interceptor {
+//
+//        val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+//        val networkInfo = connectivityManager.activeNetworkInfo
+//        val netInterceptor = Interceptor {chain ->
+//            if (!(networkInfo != null && networkInfo.isConnected)){
+//                throw NoConnectivityException()
+//            }
+//            return@Interceptor chain.proceed(chain.request())
+//        }
+//
+//        return netInterceptor
+//    }
 }

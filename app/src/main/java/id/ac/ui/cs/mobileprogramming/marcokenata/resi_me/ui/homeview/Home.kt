@@ -1,6 +1,9 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.homeview
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -47,34 +50,49 @@ class Home : Fragment() {
         AndroidSupportInjection.inject(this)
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(HomeViewModel::class.java)
 
-        viewModel.getRandom.observe(this, Observer { value ->
-            binding.random = value.meals[0]
-            iv_card_view.setOnClickListener{
-                val intent = Intent(context, RecipeActivity::class.java)
-                intent.putExtra("idMeal",value.meals[0].idMeal)
+        val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        val networkInfo = connectivityManager.activeNetworkInfo
+
+
+        if (networkInfo != null && networkInfo.isConnected) {
+            viewModel.getRandom.observe(this, Observer { value ->
+                binding.random = value.meals[0]
+                iv_card_view.setOnClickListener {
+                    val intent = Intent(context, RecipeActivity::class.java)
+                    intent.putExtra("idMeal", value.meals[0].idMeal)
+                    context?.startActivity(intent)
+                }
+            })
+
+            viewModel.getCategory.observe(this, Observer { value ->
+                adapter = CategoryAdapter(context, value.categories)
+                gv_categories.adapter = adapter
+            })
+
+            tv_faq.setOnClickListener {
+                if (cacheFileDoesNotExist()) {
+                    createCacheFile()
+                }
+                val uri = activity?.packageName?.let { it1 ->
+                    FileProvider.getUriForFile(
+                        this.context!!,
+                        it1, cacheFile!!
+                    )
+                }
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = uri
+                intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
                 context?.startActivity(intent)
             }
-        })
 
-        viewModel.getCategory.observe(this, Observer { value ->
-            adapter = CategoryAdapter(context,value.categories)
-            gv_categories.adapter = adapter
-        })
-
-        tv_faq.setOnClickListener {
-            if (cacheFileDoesNotExist()) {
-                createCacheFile()
-            }
-            val uri = activity?.packageName?.let { it1 ->
-                FileProvider.getUriForFile(this.context!!,
-                    it1, cacheFile!!)
-            }
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = uri
-            intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-            context?.startActivity(intent)
+        } else {
+            //munculkan kata no connectivity
+            tv_faq.visibility = View.GONE
+            tv_no_connection.visibility = View.VISIBLE
+            tv_top_recipes.visibility = View.GONE
+            tv_popular_recipes.visibility = View.GONE
         }
-
     }
 
     private fun cacheFileDoesNotExist(): Boolean {

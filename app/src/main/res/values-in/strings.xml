@@ -31,4 +31,5 @@
     <string name="meal_plan_added">rencana makan ditambah!</string>
     <string name="notif_reminder">Anda memiliki perencanaan makan hari ini! Jangan lupa membeli bahan-bahan ya!</string>
     <string name="tap_once_more_exit">Tekan sekali lagi untuk keluar</string>
+    <string name="no_connection">tidak ada koneksi internet</string>
 </resources>

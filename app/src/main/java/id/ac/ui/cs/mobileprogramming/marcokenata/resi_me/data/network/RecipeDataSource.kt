@@ -44,29 +44,38 @@ class RecipeDataSource @Inject constructor( private val mealDBService: MealDBSer
 
     @Provides
     suspend fun getMealByRandom(){
-        val fetchedGetMealByRandom = mealDBService
-            .getMealByRandom()
-            .await()
 
-        _mealByRandom.postValue(fetchedGetMealByRandom)
+            val fetchedGetMealByRandom = mealDBService
+                .getMealByRandom()
+                .await()
+
+            _mealByRandom.postValue(fetchedGetMealByRandom)
+
+
     }
 
     @Provides
     suspend fun getMealByCategory(category : String){
-        val fetchedMealByCategory = mealDBService
-            .getMealByCategory(category)
-            .await()
 
-        _mealByCategory.postValue(fetchedMealByCategory)
+            val fetchedMealByCategory = mealDBService
+                .getMealByCategory(category)
+                .await()
+
+            _mealByCategory.postValue(fetchedMealByCategory)
+
+
     }
 
     @Provides
     suspend fun getCategories(){
-        val fetchCategories = mealDBService
-            .getCategories()
-            .await()
 
-        _categories.postValue(fetchCategories)
+            val fetchCategories = mealDBService
+                .getCategories()
+                .await()
+
+            _categories.postValue(fetchCategories)
+
+
     }
 
 }
