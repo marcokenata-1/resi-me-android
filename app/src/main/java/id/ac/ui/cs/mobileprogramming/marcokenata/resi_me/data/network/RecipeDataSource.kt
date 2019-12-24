@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import dagger.Module
@@ -7,6 +8,7 @@ import dagger.Provides
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Categories
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.CategoryParent
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.DataResponse
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.internal.NoConnectivityException
 import retrofit2.await
 import javax.inject.Inject
 
@@ -35,47 +37,55 @@ class RecipeDataSource @Inject constructor( private val mealDBService: MealDBSer
 
     @Provides
     suspend fun getMealById(int: Int){
-        val fetchedGetMealById = mealDBService
-            .getMealByID(int)
-            .await()
+        try {
+            val fetchedGetMealById = mealDBService
+                .getMealByID(int)
+                .await()
 
-        _mealById.postValue(fetchedGetMealById)
+            _mealById.postValue(fetchedGetMealById)
+        } catch (e : NoConnectivityException){
+            Log.e("Connectivity","No Internet Connection")
+        }
+
     }
 
     @Provides
     suspend fun getMealByRandom(){
-
+        try {
             val fetchedGetMealByRandom = mealDBService
                 .getMealByRandom()
                 .await()
 
             _mealByRandom.postValue(fetchedGetMealByRandom)
-
-
+        } catch (e: NoConnectivityException){
+            Log.e("Connectivity","No Internet Connection")
+        }
     }
 
     @Provides
     suspend fun getMealByCategory(category : String){
-
+        try {
             val fetchedMealByCategory = mealDBService
                 .getMealByCategory(category)
                 .await()
 
             _mealByCategory.postValue(fetchedMealByCategory)
-
-
+        } catch (e: NoConnectivityException){
+            Log.e("Connectivity","No Internet Connection")
+        }
     }
 
     @Provides
     suspend fun getCategories(){
-
+        try {
             val fetchCategories = mealDBService
                 .getCategories()
                 .await()
 
             _categories.postValue(fetchCategories)
-
-
+        } catch (e: NoConnectivityException){
+            Log.e("Connectivity","No Internet Connection")
+        }
     }
 
 }

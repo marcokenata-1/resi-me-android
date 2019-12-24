@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SET_ALARM" />
 
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
     <application
         android:name=".ResiMeApplication"
         android:allowBackup="true"
@@ -14,20 +16,20 @@
         android:roundIcon="@mipmap/ic_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MealPlanActivity"></activity>
+        <activity android:name=".ui.splashscreengl.SplashScreenGL" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.MealPlanActivity" />
         <activity android:name=".ui.AdderActivity" />
         <activity android:name=".ui.CategoryActivity" />
         <activity
             android:name=".ui.RecipeActivity"
             android:label="@string/title_activity_recipe"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.MainActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -38,8 +40,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/paths" />
         </provider>
-        <service android:name=".NotificationService"/>
-        <receiver android:name=".NotificationReceiver"/>
+
+        <service android:name=".NotificationService" />
+
+        <receiver android:name=".NotificationReceiver" />
     </application>
 
 </manifest>
