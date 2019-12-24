@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "/Users/marcokenata/Documents/resi-me-android/app/src/cpp/CMakeLists.txt",
+    "/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/build/cmake/platforms.cmake",
+    "/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/debug/x86_64\" clean"
+  ],
+  "buildTargetsCommand": "/Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/debug/x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "kotlin-jni-Debug-x86_64": {
+      "artifactName": "kotlin-jni",
+      "buildCommand": "/Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/debug/x86_64\" kotlin-jni",
+      "abi": "x86_64",
+      "output": "/Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/debug/obj/x86_64/libkotlin-jni.so"
+    }
+  }
+}

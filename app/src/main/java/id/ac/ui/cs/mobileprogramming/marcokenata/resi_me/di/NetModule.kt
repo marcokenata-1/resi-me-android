@@ -50,16 +50,20 @@ class NetModule {
     }
 
 
+    external fun httpUrl() : String
+
     @Provides
     @Singleton
     fun providesRetrofit(okHttpClient: OkHttpClient) : MealDBService {
         Log.d("RETROFIT","CALLED")
-        return Retrofit.Builder().client(okHttpClient).baseUrl(httpUrl)
+        return Retrofit.Builder().client(okHttpClient).baseUrl(httpUrl().toString())
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
             .create(MealDBService::class.java)
     }
+
+
 
 
 //    @Provides

@@ -39,5 +39,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    companion object {
+        init {
+            System.loadLibrary("kotlin-jni")
+        }
+    }
+
 
 }

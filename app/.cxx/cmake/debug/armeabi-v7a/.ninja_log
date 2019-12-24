@@ -1,0 +1,13 @@
+# ninja log v5
+1	37	1577182819	CMakeFiles/kotlin-jni.dir/kotlin-jni.c.o	c6c7e04b0c883476
+37	62	1577182819	/Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libkotlin-jni.so	48f7455f8028c030
+0	48	1577183255	CMakeFiles/kotlin-jni.dir/kotlin-jni.c.o	c6c7e04b0c883476
+49	107	1577183255	/Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libkotlin-jni.so	48f7455f8028c030
+0	39	1577183302	CMakeFiles/kotlin-jni.dir/kotlin-jni.c.o	c6c7e04b0c883476
+39	66	1577183302	/Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libkotlin-jni.so	48f7455f8028c030
+0	41	1577183335	CMakeFiles/kotlin-jni.dir/kotlin-jni.c.o	c6c7e04b0c883476
+41	69	1577183335	/Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libkotlin-jni.so	48f7455f8028c030
+0	39	1577183347	CMakeFiles/kotlin-jni.dir/kotlin-jni.c.o	c6c7e04b0c883476
+39	66	1577183347	/Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libkotlin-jni.so	48f7455f8028c030
+0	48	1577183639	CMakeFiles/kotlin-jni.dir/kotlin-jni.c.o	c6c7e04b0c883476
+48	107	1577183639	/Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libkotlin-jni.so	48f7455f8028c030
