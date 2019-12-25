@@ -15,7 +15,7 @@ class OpenGLRenderer : GLSurfaceView.Renderer {
 
 
     private var context: Context? = null
-    private var frame: MaskedSquare? = null
+    private lateinit var frame: MaskedSquare
 
     private var lastTimeMillis = 0L
 
@@ -33,8 +33,8 @@ class OpenGLRenderer : GLSurfaceView.Renderer {
         )
         val frameTexture: Int = TextureUtils.loadTexture(context, R.drawable.untitled_1)
         frame = MaskedSquare(shader)
-        frame!!.setPosition(Float3(0.0f, 0.0f, 0.1f))
-        frame!!.setTexture(frameTexture)
+        frame.setPosition(Float3(0.0f, 0.0f, 0.1f))
+        frame.setTexture(frameTexture)
         lastTimeMillis = System.currentTimeMillis()
     }
 
@@ -42,16 +42,14 @@ class OpenGLRenderer : GLSurfaceView.Renderer {
         GLES20.glViewport(0, 0, w, h)
         val perspective = Matrix4f()
         perspective.loadPerspective(85.0f, w.toFloat() / h.toFloat(), 1.0f, -150.0f)
-        if (frame != null) {
-            frame?.setProjection(perspective)
-        }
+
+            frame.setProjection(perspective)
+
     }
 
     override fun onDrawFrame(gl10: GL10?) {
         GLES20.glClearColor(1.0f, 0.0f, 0.0f, 0.0f)
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT or GLES20.GL_DEPTH_BUFFER_BIT)
-        GLES20.glEnable(GLES20.GL_DEPTH_TEST)
-        GLES20.glEnable(GLES20.GL_CULL_FACE)
         GLES20.glEnable(GLES20.GL_BLEND)
         GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA)
         val currentTimeMillis = System.currentTimeMillis()
@@ -62,15 +60,15 @@ class OpenGLRenderer : GLSurfaceView.Renderer {
     private fun updateWithDelta(dt: Long) {
         val camera = Matrix4f()
         camera.translate(0.0f, 1.0f, -5.0f)
-        frame?.setCamera(camera)
+        frame.setCamera(camera)
         val secsPerMove = 2.0f * ONE_SEC
         val movement =
-            Math.sin(System.currentTimeMillis() * 2 * Math.PI / secsPerMove).toFloat()
-        frame?.setPosition(frame?.position?.z?.let { frame?.position?.y?.let { it1 ->
+            Math.sin(System.currentTimeMillis() * 2 * Math.E / secsPerMove).toFloat()
+        frame.setPosition(
             Float3(movement,
-                it1, it)
-        } })
-        frame?.draw(dt)
+                frame.position.z, frame.position.y)
+        )
+        frame.draw(dt)
     }
 
 

@@ -34,10 +34,12 @@ class SavedMenu : Fragment() {
         AndroidSupportInjection.inject(this)
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(SavedMenuViewModel::class.java)
 
-        viewModel.savedRecipes.observe(this, Observer{ value ->
-            adapter = RecipeAdapter(context,value)
-            lv_recipes.adapter = adapter
-        })
+        if (viewModel.savedRecipes.value?.size != 0){
+            viewModel.savedRecipes.observe(this, Observer{ value ->
+                adapter = RecipeAdapter(context,value)
+                lv_recipes.adapter = adapter
+            })
+        }
     }
 
 }

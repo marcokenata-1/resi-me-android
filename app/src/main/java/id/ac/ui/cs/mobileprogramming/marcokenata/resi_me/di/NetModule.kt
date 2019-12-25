@@ -1,20 +1,15 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.di
 
-import android.content.Context
-import android.net.ConnectivityManager
 import android.util.Log
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.MealDBService
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.httpUrl
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.internal.NoConnectivityException
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Inject
 import javax.inject.Singleton
 
 @Module
@@ -56,7 +51,7 @@ class NetModule {
     @Singleton
     fun providesRetrofit(okHttpClient: OkHttpClient) : MealDBService {
         Log.d("RETROFIT","CALLED")
-        return Retrofit.Builder().client(okHttpClient).baseUrl(httpUrl().toString())
+        return Retrofit.Builder().client(okHttpClient).baseUrl(httpUrl())
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()

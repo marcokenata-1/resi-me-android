@@ -40,14 +40,12 @@
     "isDebuggableEnabled": false,
     "validAbiList": [
       "ARMEABI_V7A",
-      "ARM64_V8A",
-      "X86",
-      "X86_64"
+      "X86"
     ],
     "buildTargetSet": []
   },
   "abi": "ARMEABI_V7A",
-  "abiPlatformVersion": 16,
+  "abiPlatformVersion": 17,
   "cxxBuildFolder": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/release/armeabi-v7a",
   "jsonFile": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json",
   "gradleBuildOutputFolder": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cxx/release/armeabi-v7a",

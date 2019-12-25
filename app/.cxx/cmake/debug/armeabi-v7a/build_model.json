@@ -5,6 +5,7 @@
       "sdkFolder": "/Users/marcokenata/Library/Android/sdk",
       "isNativeCompilerSettingsCacheEnabled": false,
       "isBuildOnlyTargetAbiEnabled": true,
+      "ideBuildTargetAbi": "x86,armeabi-v7a,armeabi",
       "splitsAbiFilterSet": [],
       "intermediatesFolder": "/Users/marcokenata/Documents/resi-me-android/app/build/intermediates",
       "gradleModulePathName": ":app",
@@ -39,15 +40,13 @@
     "gradleBuildOutputFolder": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cxx/debug",
     "isDebuggableEnabled": true,
     "validAbiList": [
-      "ARMEABI_V7A",
-      "ARM64_V8A",
       "X86",
-      "X86_64"
+      "ARMEABI_V7A"
     ],
     "buildTargetSet": []
   },
   "abi": "ARMEABI_V7A",
-  "abiPlatformVersion": 16,
+  "abiPlatformVersion": 17,
   "cxxBuildFolder": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/debug/armeabi-v7a",
   "jsonFile": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/debug/armeabi-v7a/android_gradle_build.json",
   "gradleBuildOutputFolder": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cxx/debug/armeabi-v7a",

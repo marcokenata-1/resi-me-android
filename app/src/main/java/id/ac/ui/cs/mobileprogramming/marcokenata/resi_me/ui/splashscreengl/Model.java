@@ -85,8 +85,8 @@ public class Model {
         Matrix4f mat = new Matrix4f(); // make a new identitiy 4x4 matrix
         mat.translate(position.x, position.y, position.z);
         mat.rotate(rotationX, 1.0f, 0.0f, 0.0f);
-        mat.rotate(rotationY, 0.0f, 2.0f, 0.0f);
-        mat.rotate(rotationZ, 0.0f, 0.0f, 3.0f);
+        mat.rotate(rotationY, 0.0f, 0.0f, 0.0f);
+        mat.rotate(rotationZ, 0.0f, 0.0f, 0.0f);
         mat.scale(scale, scale, scale);
         return mat;
     }

@@ -48,10 +48,14 @@ class MealPlanAdder : Fragment() {
         })
 
         bt_add_meal.setOnClickListener {
-            viewModel.addMeal(MealPlans(et_name.text.toString(),adapter!!.getAll()))
-            val intentMain = Intent(context,MainActivity::class.java)
-            Toast.makeText(context,R.string.meal_plan_added, Toast.LENGTH_SHORT).show()
-            context?.startActivity(intentMain)
+            if (et_name.length() != 0 && adapter!!.getAll().size != 0){
+                viewModel.addMeal(MealPlans(et_name.text.toString(),adapter!!.getAll()))
+                val intentMain = Intent(context,MainActivity::class.java)
+                Toast.makeText(context,R.string.meal_plan_added, Toast.LENGTH_SHORT).show()
+                context?.startActivity(intentMain)
+            } else {
+                Toast.makeText(context,"Meal plan can't be added", Toast.LENGTH_SHORT).show()
+            }
         }
 
     }

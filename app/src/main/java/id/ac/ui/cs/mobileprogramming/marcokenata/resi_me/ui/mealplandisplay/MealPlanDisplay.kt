@@ -84,8 +84,9 @@ class MealPlanDisplay : Fragment() {
             activity?.startService(intentReminder)
         }
 
+            viewModel.getPlan(idMeal)
 
-        viewModel.getPlan(idMeal)
+
 
         viewModel.mealPlanLiveData.observe(this, Observer { values ->
             tv_meal_plan_title.text = values.mealPlanName

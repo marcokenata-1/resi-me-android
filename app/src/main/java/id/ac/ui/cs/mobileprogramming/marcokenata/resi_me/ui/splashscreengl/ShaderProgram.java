@@ -131,7 +131,6 @@ public class ShaderProgram {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void fetchAttributes() {
 
         attributes.clear();
@@ -151,7 +150,6 @@ public class ShaderProgram {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void fetchUniforms() {
 
         uniforms.clear();

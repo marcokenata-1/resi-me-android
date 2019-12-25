@@ -13,12 +13,16 @@ android {
     buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "id.ac.ui.cs.mobileprogramming.marcokenata.resi_me"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -45,6 +49,7 @@ android {
             path "src/cpp/CMakeLists.txt"
         }
     }
+
 }
 
 dependencies {
