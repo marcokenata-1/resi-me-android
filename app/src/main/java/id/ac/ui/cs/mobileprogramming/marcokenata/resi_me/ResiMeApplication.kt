@@ -2,11 +2,13 @@ package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
 import androidx.fragment.app.Fragment
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import dagger.android.support.HasSupportFragmentInjector
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.di.AppModule
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.di.DaggerAppComponent
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.di.NetModule
 import javax.inject.Inject
@@ -24,6 +26,7 @@ class ResiMeApplication : Application(), HasActivityInjector, HasSupportFragment
 
         DaggerAppComponent.builder()
             .application(this)
+
 //            .netModuleImplementation(NetModule(context = this.applicationContext))
             .build()
             .inject(this)
