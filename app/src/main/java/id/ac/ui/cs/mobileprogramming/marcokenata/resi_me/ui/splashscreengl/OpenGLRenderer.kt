@@ -14,12 +14,12 @@ class OpenGLRenderer : GLSurfaceView.Renderer {
     private val ONE_SEC = 1000.0f // 1 second
 
 
-    private var context: Context? = null
+    private var context: Context
     private lateinit var frame: MaskedSquare
 
     private var lastTimeMillis = 0L
 
-    constructor(context: Context?) {
+    constructor(context: Context) {
         this.context = context
     }
 
@@ -63,7 +63,7 @@ class OpenGLRenderer : GLSurfaceView.Renderer {
         frame.setCamera(camera)
         val secsPerMove = 2.0f * ONE_SEC
         val movement =
-            Math.sin(System.currentTimeMillis() * 2 * Math.E / secsPerMove).toFloat()
+            Math.sin(System.currentTimeMillis() * 2 * Math.PI / secsPerMove).toFloat()
         frame.setPosition(
             Float3(movement,
                 frame.position.z, frame.position.y)

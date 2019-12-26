@@ -16,12 +16,7 @@
         android:roundIcon="@mipmap/ic_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.splashscreengl.SplashScreenGL">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.splashscreengl.SplashScreenGL" />
         <activity android:name=".ui.MealPlanActivity" />
         <activity android:name=".ui.AdderActivity" />
         <activity android:name=".ui.CategoryActivity" />
@@ -29,7 +24,12 @@
             android:name=".ui.RecipeActivity"
             android:label="@string/title_activity_recipe"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -42,6 +42,7 @@
         </provider>
 
         <service android:name=".NotificationService" />
+        <service android:name=".BroadcastService" />
 
         <receiver android:name=".NotificationReceiver" />
     </application>

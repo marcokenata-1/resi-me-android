@@ -1,25 +1,29 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.homeview
 
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.net.ConnectivityManager
-import android.net.NetworkInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import dagger.android.support.AndroidSupportInjection
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.BroadcastService
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.databinding.HomeFragmentBinding
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.RecipeActivity
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.adapters.CategoryAdapter
 import kotlinx.android.synthetic.main.home_fragment.*
 import java.io.*
+import java.lang.Exception
 import javax.inject.Inject
 
 
@@ -93,6 +97,64 @@ class Home : Fragment() {
             tv_top_recipes.visibility = View.GONE
             tv_popular_recipes.visibility = View.GONE
         }
+
+        bt_timer_start.setOnClickListener {
+            if((et_minutes.text.toString().toLong() > 60 && et_seconds.text.toString().toLong() > 60) || et_minutes.text.equals(null) || et_seconds.text.equals(null)){
+                Toast.makeText(context,"Please fill the minutes and the seconds of the timer",Toast.LENGTH_SHORT).show()
+            } else {
+                val minutes = et_minutes.text.toString().toLong()
+                val seconds = et_seconds.text.toString().toLong()
+
+                val kombinasi = ((minutes * 60 ) + seconds) * 1000
+                val intent = Intent(context,BroadcastService::class.java)
+                intent.putExtra("milli",kombinasi)
+                activity?.startService(intent)
+                Toast.makeText(context,"Timer started",Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activity?.registerReceiver(countdown_br, IntentFilter(BroadcastService.COUNTDOWN_BR))
+    }
+
+    override fun onPause() {
+        super.onPause()
+        activity?.unregisterReceiver(countdown_br)
+    }
+
+    override fun onStop() {
+        try {
+            activity?.unregisterReceiver(countdown_br)
+        } catch (e: Exception){
+
+        }
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        activity?.stopService(Intent(context,BroadcastService::class.java))
+        super.onDestroy()
+
+    }
+
+    private val countdown_br = object : BroadcastReceiver(){
+        override fun onReceive(p0: Context?, p1: Intent?) {
+            if (p1 != null) {
+                updateGUI(intent = p1)
+            }
+        }
+    }
+
+    fun updateGUI(intent: Intent){
+        val seconds = intent.getLongExtra("countdown",10000) / 1000
+        var minutes: Long = 0
+        if (seconds > 60){
+            minutes = seconds % 60
+        }
+        et_minutes.setText(minutes.toString())
+        et_seconds.setText(seconds.toString())
     }
 
     private fun cacheFileDoesNotExist(): Boolean {
