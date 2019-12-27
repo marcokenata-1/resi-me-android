@@ -25,6 +25,7 @@ import kotlinx.android.synthetic.main.home_fragment.*
 import java.io.*
 import java.lang.Exception
 import javax.inject.Inject
+import kotlin.math.min
 
 
 class Home : Fragment() {
@@ -99,11 +100,16 @@ class Home : Fragment() {
         }
 
         bt_timer_start.setOnClickListener {
-            if((et_minutes.text.toString().toLong() > 60 && et_seconds.text.toString().toLong() > 60) || et_minutes.text.equals(null) || et_seconds.text.equals(null)){
+            if((et_minutes.text.toString().toLong() > 60 && et_seconds.text.toString().toLong() > 60)  || et_seconds.text.equals(null)){
                 Toast.makeText(context,"Please fill the minutes and the seconds of the timer",Toast.LENGTH_SHORT).show()
             } else {
-                val minutes = et_minutes.text.toString().toLong()
+
+                var minutes = et_minutes.text.toString().toLong()
                 val seconds = et_seconds.text.toString().toLong()
+
+                if (et_minutes.text.equals(null)){
+                    minutes = 0
+                }
 
                 val kombinasi = ((minutes * 60 ) + seconds) * 1000
                 val intent = Intent(context,BroadcastService::class.java)

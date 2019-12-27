@@ -36,8 +36,8 @@ public class Model {
     protected float rotationY  = 0.0f;
     protected float rotationZ  = 0.0f;
     protected float scale      = 1.0f;
-    protected Matrix4f camera  = new Matrix4f();
-    protected Matrix4f projection = new Matrix4f();
+    private Matrix4f camera  = new Matrix4f();
+    private Matrix4f projection = new Matrix4f();
 
     public Model(String name, ShaderProgram shader, float[] vertices, short[] indices) {
         this.name = name;
@@ -81,7 +81,7 @@ public class Model {
 
 
 
-    public Matrix4f modelMatrix() {
+    private Matrix4f modelMatrix() {
         Matrix4f mat = new Matrix4f(); // make a new identitiy 4x4 matrix
         mat.translate(position.x, position.y, position.z);
         mat.rotate(rotationX, 1.0f, 0.0f, 0.0f);
@@ -107,9 +107,9 @@ public class Model {
 
         shader.begin();
 
-        GLES20.glActiveTexture(GLES20.GL_TEXTURE1);                 // 1번 텍스처 슬롯을 activate 한다.
-        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textureName);    // 1번 텍스처 슬롯에 생성한 텍스처를 바인딩한다.
-        shader.setUniformi("u_Texture", 1);                         // 유니폼 u_Texture에는 activate한 텍스처슬롯번호를 알려준다.
+        GLES20.glActiveTexture(GLES20.GL_TEXTURE1);
+        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textureName);
+        shader.setUniformi("u_Texture", 1);
 
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, maskName);
