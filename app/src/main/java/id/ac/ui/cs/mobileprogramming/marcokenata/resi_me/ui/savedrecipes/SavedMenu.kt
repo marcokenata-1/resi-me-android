@@ -36,7 +36,7 @@ class SavedMenu : Fragment() {
 
         if (viewModel.savedRecipes.value?.size != 0){
             viewModel.savedRecipes.observe(this, Observer{ value ->
-                adapter = RecipeAdapter(context,value)
+                adapter = value?.let { RecipeAdapter(context, it) }
                 lv_recipes.adapter = adapter
             })
         }

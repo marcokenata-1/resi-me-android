@@ -20,11 +20,11 @@ class SavedMenuViewModel(
         coroutineContext.cancel()
     }
 
-    val savedRecipes = MutableLiveData<List<SavedRecipes>>()
+    val savedRecipes = MutableLiveData<List<SavedRecipes>?>()
 
     init {
         launch {
-            savedRecipes.value = recipeRepository.fetchSavedRecipesList().value
+            savedRecipes.postValue(recipeRepository.fetchSavedRecipesList().value)
         }
     }
 }

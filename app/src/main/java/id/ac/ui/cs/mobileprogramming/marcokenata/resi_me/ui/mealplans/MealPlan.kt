@@ -37,8 +37,8 @@ class MealPlan : Fragment() {
         AndroidSupportInjection.inject(this)
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(MealPlanViewModel::class.java)
 
-        viewModel.mealPlanLiveData.observe(this, Observer {
-            adapter = MealPlanAdapter(context,it)
+        viewModel.mealPlanLiveData.observe(this, Observer {lists ->
+            adapter = lists?.let { MealPlanAdapter(context, it) }
             lv_meal_plan.adapter = adapter
         })
 

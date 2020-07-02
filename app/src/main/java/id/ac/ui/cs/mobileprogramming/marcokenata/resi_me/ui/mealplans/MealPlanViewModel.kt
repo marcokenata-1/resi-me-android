@@ -19,11 +19,11 @@ class MealPlanViewModel(
         coroutineContext.cancel()
     }
 
-    val mealPlanLiveData = MutableLiveData<List<MealPlans>>()
+    val mealPlanLiveData = MutableLiveData<List<MealPlans>?>()
 
     init {
         launch {
-            mealPlanLiveData.value = recipeRepository.fetchMealPlanList().value
+            mealPlanLiveData.postValue(recipeRepository.fetchMealPlanList().value)
         }
     }
 
