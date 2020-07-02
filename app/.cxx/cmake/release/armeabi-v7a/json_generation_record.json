@@ -17,10 +17,6 @@
   },
   {
     "level": "INFO",
-    "message": "- force flag, will remove stale json folder"
-  },
-  {
-    "level": "INFO",
     "message": "- command changed from previous, will remove stale json folder"
   },
   {
@@ -33,7 +29,7 @@
   },
   {
     "level": "INFO",
-    "message": "executing cmake Executable : /Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake\narguments : \n-H/Users/marcokenata/Documents/resi-me-android/app/src/cpp\n-B/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/release/armeabi-v7a\n-DANDROID_ABI\u003darmeabi-v7a\n-DANDROID_PLATFORM\u003dandroid-17\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/release/obj/armeabi-v7a\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003d/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_ANDROID_ARCH_ABI\u003darmeabi-v7a\n-DCMAKE_SYSTEM_VERSION\u003d17\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_ANDROID_NDK\u003d/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/build/cmake/android.toolchain.cmake\n-G Ninja\n-DCMAKE_MAKE_PROGRAM\u003d/Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja\njvmArgs : \n\n"
+    "message": "executing cmake Executable : /Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake\narguments : \n-H/Users/marcokenata/Documents/resi-me-android/app/src/cpp\n-B/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/release/armeabi-v7a\n-DANDROID_ABI\u003darmeabi-v7a\n-DANDROID_PLATFORM\u003dandroid-17\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/release/obj/armeabi-v7a\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003d/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_ANDROID_ARCH_ABI\u003darmeabi-v7a\n-DCMAKE_SYSTEM_VERSION\u003d17\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_ANDROID_NDK\u003d/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake\n-G Ninja\n-DCMAKE_MAKE_PROGRAM\u003d/Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja\njvmArgs : \n\n"
   },
   {
     "level": "INFO",

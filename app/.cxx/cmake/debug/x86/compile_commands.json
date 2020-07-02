@@ -1,7 +1,7 @@
 [
 {
   "directory": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/debug/x86",
-  "command": "/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android17 --gcc-toolchain=/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dkotlin_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/kotlin-jni.dir/kotlin-jni.c.o   -c /Users/marcokenata/Documents/resi-me-android/app/src/cpp/kotlin-jni.c",
+  "command": "/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android17 --gcc-toolchain=/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dkotlin_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/kotlin-jni.dir/kotlin-jni.c.o   -c /Users/marcokenata/Documents/resi-me-android/app/src/cpp/kotlin-jni.c",
   "file": "/Users/marcokenata/Documents/resi-me-android/app/src/cpp/kotlin-jni.c"
 }
 ]

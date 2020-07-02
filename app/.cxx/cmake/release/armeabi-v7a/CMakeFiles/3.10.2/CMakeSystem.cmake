@@ -1,9 +1,9 @@
-set(CMAKE_HOST_SYSTEM "Darwin-19.2.0")
+set(CMAKE_HOST_SYSTEM "Darwin-19.5.0")
 set(CMAKE_HOST_SYSTEM_NAME "Darwin")
-set(CMAKE_HOST_SYSTEM_VERSION "19.2.0")
+set(CMAKE_HOST_SYSTEM_VERSION "19.5.0")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/build/cmake/android.toolchain.cmake")
+include("/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake")
 
 set(CMAKE_SYSTEM "Android-1")
 set(CMAKE_SYSTEM_NAME "Android")

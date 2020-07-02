@@ -1,12 +1,12 @@
 {
   "stringTable": {
     "0": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/release/armeabi-v7a",
-    "1": "--target=armv7-none-linux-androideabi17 --gcc-toolchain=/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dkotlin_jni_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -Oz -DNDEBUG -fPIC"
+    "1": "--target=armv7-none-linux-androideabi17 --gcc-toolchain=/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dkotlin_jni_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -Oz -DNDEBUG -fPIC"
   },
   "buildFiles": [
-    "/Users/marcokenata/Documents/resi-me-android/app/src/cpp/CMakeLists.txt",
-    "/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/build/cmake/platforms.cmake",
-    "/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/build/cmake/android.toolchain.cmake"
+    "/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake",
+    "/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/build/cmake/platforms.cmake",
+    "/Users/marcokenata/Documents/resi-me-android/app/src/cpp/CMakeLists.txt"
   ],
   "cleanCommands": [
     "/Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/release/armeabi-v7a\" clean"
@@ -16,7 +16,7 @@
     "kotlin-jni-Release-armeabi-v7a": {
       "buildCommand": "/Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/release/armeabi-v7a\" kotlin-jni",
       "buildType": "release",
-      "toolchain": "3708662157",
+      "toolchain": "2988230210",
       "abi": "armeabi-v7a",
       "artifactName": "kotlin-jni",
       "files": [
@@ -31,8 +31,8 @@
     }
   },
   "toolchains": {
-    "3708662157": {
-      "cCompilerExecutable": "/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang"
+    "2988230210": {
+      "cCompilerExecutable": "/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang"
     }
   },
   "cFileExtensions": [

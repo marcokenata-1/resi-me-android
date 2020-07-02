@@ -16,7 +16,6 @@
         android:roundIcon="@mipmap/ic_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.splashscreengl.SplashScreenGL" />
         <activity android:name=".ui.MealPlanActivity" />
         <activity android:name=".ui.AdderActivity" />
         <activity android:name=".ui.CategoryActivity" />

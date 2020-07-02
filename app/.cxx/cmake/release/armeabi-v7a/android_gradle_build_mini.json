@@ -1,8 +1,8 @@
 {
   "buildFiles": [
-    "/Users/marcokenata/Documents/resi-me-android/app/src/cpp/CMakeLists.txt",
-    "/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/build/cmake/platforms.cmake",
-    "/Users/marcokenata/Library/Android/sdk/ndk/20.1.5948944/build/cmake/android.toolchain.cmake"
+    "/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake",
+    "/Users/marcokenata/Library/Android/sdk/ndk/21.0.6113669/build/cmake/platforms.cmake",
+    "/Users/marcokenata/Documents/resi-me-android/app/src/cpp/CMakeLists.txt"
   ],
   "cleanCommands": [
     "/Users/marcokenata/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/release/armeabi-v7a\" clean"
