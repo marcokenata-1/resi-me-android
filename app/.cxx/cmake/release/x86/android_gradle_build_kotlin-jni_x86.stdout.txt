@@ -1,0 +1,3 @@
+ninja: Entering directory `/Users/marcokenata/Documents/resi-me-android/app/.cxx/cmake/release/x86'
+[1/2] Building C object CMakeFiles/kotlin-jni.dir/kotlin-jni.c.o
+[2/2] Linking C shared library /Users/marcokenata/Documents/resi-me-android/app/build/intermediates/cmake/release/obj/x86/libkotlin-jni.so

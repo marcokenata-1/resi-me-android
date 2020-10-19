@@ -12,7 +12,7 @@ class RecipeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_recipe)
 
-        AndroidInjection.inject(this)
+//        AndroidInjection.inject(this)
 
         supportActionBar?.hide()
 

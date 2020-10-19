@@ -11,7 +11,7 @@ class AdderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adder)
 
-        AndroidInjection.inject(this)
+//        AndroidInjection.inject(this)
 
         supportActionBar?.hide()
     }

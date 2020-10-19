@@ -1,11 +1,10 @@
 package id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.congratulations
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.db.SavedRecipes
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Meals
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.repository.RecipeRepository
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.db.SavedRecipes
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -25,7 +24,7 @@ class CongratulationsViewModel(
 
     val recipeLiveData = MutableLiveData<Meals>()
 
-    val recipeChecker = MutableLiveData<Meals>()
+    private val recipeChecker = MutableLiveData<Meals>()
 
     fun getId(id: Int){
         launch {

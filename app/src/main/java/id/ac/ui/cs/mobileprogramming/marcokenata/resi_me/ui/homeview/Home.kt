@@ -23,9 +23,7 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.RecipeActivity
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.adapters.CategoryAdapter
 import kotlinx.android.synthetic.main.home_fragment.*
 import java.io.*
-import java.lang.Exception
 import javax.inject.Inject
-import kotlin.math.min
 
 
 class Home : Fragment() {
@@ -37,7 +35,7 @@ class Home : Fragment() {
 
     lateinit var binding: HomeFragmentBinding
 
-    var adapter : CategoryAdapter? = null
+    private var adapter : CategoryAdapter? = null
 
     private val ASSET_NAME = "Frequently Asked Questions.pdf"
     private var cacheFile: File? = null

@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.selector_ticket.view.*
 class SelectorAdapter : RecyclerView.Adapter<SelectorAdapter.MultiViewHolder> {
 
     var context: Context? = null
-    var listOfRecipes =  ArrayList<SavedRecipes>()
+    private var listOfRecipes =  ArrayList<SavedRecipes>()
     var binding :SelectorTicketBinding? = null
 
 

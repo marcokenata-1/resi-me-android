@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import androidx.databinding.DataBindingUtil
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.R
-import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.db.SavedRecipes
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.response.Meals
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.databinding.RecipeTicketBinding
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.RecipeActivity
@@ -16,7 +15,7 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.RecipeActivity
 class MealPlanRecipeAdapter : BaseAdapter {
 
     var context: Context? = null
-    var mealPlanDisplay = ArrayList<Meals?>()
+    private var mealPlanDisplay = ArrayList<Meals?>()
 
     constructor(context: Context?, mealPlanDisplay: ArrayList<Meals?>){
         this.context = context
