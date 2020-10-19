@@ -15,7 +15,7 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.MealPlanActivity
 class MealPlanAdapter : BaseAdapter {
 
     var context: Context? = null
-    var savedMealPlanList = ArrayList<MealPlans>()
+    private var savedMealPlanList = ArrayList<MealPlans>()
 
     constructor(context: Context?,savedMealPlanList : List<MealPlans>){
         this.context = context

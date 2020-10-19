@@ -5,7 +5,6 @@
       "sdkFolder": "/Users/marcokenata/Library/Android/sdk",
       "isNativeCompilerSettingsCacheEnabled": false,
       "isBuildOnlyTargetAbiEnabled": true,
-      "ideBuildTargetAbi": "x86,armeabi-v7a,armeabi",
       "splitsAbiFilterSet": [],
       "intermediatesFolder": "/Users/marcokenata/Documents/resi-me-android/app/build/intermediates",
       "gradleModulePathName": ":app",
@@ -40,8 +39,8 @@
     "gradleBuildOutputFolder": "/Users/marcokenata/Documents/resi-me-android/app/.cxx/cxx/debug",
     "isDebuggableEnabled": true,
     "validAbiList": [
-      "X86",
-      "ARMEABI_V7A"
+      "ARMEABI_V7A",
+      "X86"
     ],
     "buildTargetSet": []
   },

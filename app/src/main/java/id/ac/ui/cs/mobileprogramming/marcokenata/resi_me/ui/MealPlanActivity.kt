@@ -10,7 +10,7 @@ class MealPlanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meal_plan)
-        AndroidInjection.inject(this)
+//        AndroidInjection.inject(this)
 
         supportActionBar?.hide()
     }

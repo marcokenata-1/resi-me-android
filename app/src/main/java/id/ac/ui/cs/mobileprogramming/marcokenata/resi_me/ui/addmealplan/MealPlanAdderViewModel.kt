@@ -18,20 +18,15 @@ class MealPlanAdderViewModel(
     override val coroutineContext: CoroutineContext
         get() = SupervisorJob() + Dispatchers.Main
 
-    val savedRecipes = MutableLiveData<List<SavedRecipes>>()
+    val savedRecipes = MutableLiveData<List<SavedRecipes>?>()
 
     init {
         launch {
-            if (recipeRepository.fetchSavedRecipesList().value == null){
-
-            } else {
-                savedRecipes.value = recipeRepository.fetchSavedRecipesList().value
-            }
-
+            savedRecipes.postValue(recipeRepository.fetchSavedRecipesList().value)
         }
     }
 
-    fun addMeal(mealPlans: MealPlans){
+    fun addMeal(mealPlans: MealPlans) {
         launch {
             recipeRepository.insertMealPlanRepo(mealPlans)
         }

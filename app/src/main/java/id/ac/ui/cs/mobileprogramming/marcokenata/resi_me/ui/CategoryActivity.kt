@@ -11,7 +11,7 @@ class CategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
-        AndroidInjection.inject(this)
+//        AndroidInjection.inject(this)
 
         supportActionBar?.hide()
     }

@@ -15,7 +15,7 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.RecipeActivity
 class CuisineAdapter : BaseAdapter {
 
     var context: Context? = null
-    var listOfMeals = ArrayList<CategoryMeals>()
+    private var listOfMeals = ArrayList<CategoryMeals>()
 
     constructor(context: Context?, listOfMeals: ArrayList<CategoryMeals>){
         this.context = context

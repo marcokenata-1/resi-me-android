@@ -15,7 +15,7 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.RecipeActivity
 class RecipeAdapter : BaseAdapter {
 
     var context: Context? = null
-    var savedRecipesList = ArrayList<SavedRecipes>()
+    private var savedRecipesList = ArrayList<SavedRecipes>()
 
     constructor(context: Context?, savedRecipesList: List<SavedRecipes>){
         this.context = context

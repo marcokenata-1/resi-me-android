@@ -15,7 +15,7 @@ import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ui.CategoryActivity
 class CategoryAdapter : BaseAdapter {
 
     var context: Context? = null
-    var listOfCategory = ArrayList<CategorySubs>()
+    private var listOfCategory = ArrayList<CategorySubs>()
 
     constructor(context: Context?,listOfCategory : ArrayList<CategorySubs>){
         this.context = context

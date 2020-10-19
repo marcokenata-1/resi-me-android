@@ -23,7 +23,7 @@ class MealPlan : Fragment() {
 
     private lateinit var viewModel: MealPlanViewModel
 
-    var adapter : MealPlanAdapter? = null
+    private var adapter : MealPlanAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

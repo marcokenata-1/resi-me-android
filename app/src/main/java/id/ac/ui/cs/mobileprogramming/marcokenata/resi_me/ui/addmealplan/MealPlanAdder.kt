@@ -42,7 +42,7 @@ class MealPlanAdder : Fragment() {
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(MealPlanAdderViewModel::class.java)
 
         viewModel.savedRecipes.observe(this, Observer {
-            adapter = SelectorAdapter(context,it)
+            adapter = it?.let { it1 -> SelectorAdapter(context, it1) }
             rv_selector.layoutManager = LinearLayoutManager(context)
             rv_selector.adapter = adapter
         })

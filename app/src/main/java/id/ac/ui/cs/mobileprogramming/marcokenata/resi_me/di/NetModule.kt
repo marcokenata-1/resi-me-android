@@ -8,6 +8,7 @@ import dagger.Module
 import dagger.Provides
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.ResiMeApplication
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.MealDBService
+import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.data.network.httpUrl
 import id.ac.ui.cs.mobileprogramming.marcokenata.resi_me.internal.NoConnectivityException
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -19,7 +20,7 @@ import javax.inject.Singleton
 @Module
 class NetModule {
 
-    val requestInterceptor = Interceptor {chain ->
+    private val requestInterceptor = Interceptor { chain ->
 
         var url = chain.request()
             .url
@@ -51,13 +52,12 @@ class NetModule {
     }
 
 
-    external fun httpUrl() : String
 
     @Provides
     @Singleton
     fun providesRetrofit(okHttpClient: OkHttpClient) : MealDBService {
         Log.d("RETROFIT","CALLED")
-        return Retrofit.Builder().client(okHttpClient).baseUrl(httpUrl())
+        return Retrofit.Builder().client(okHttpClient).baseUrl(httpUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
